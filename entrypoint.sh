@@ -10,6 +10,9 @@ set -e
 : ${LDAP_BASEDIR:="/etc/dirsrv/slapd-${LDAP_HOSTNAME}"}
 : ${LDAP_RUN_USER:="root"}
 : ${LDAP_RUN_GROUP:="root"}
+: ${LDAP_PLUGIN_ENABLE_ACCOUNT_POLICY:="true"}
+: ${LDAP_PLUGIN_ENABLE_MEMBEROF:="true"}
+
 
 # export useful variables
 export LDAP_BASEDIR=${LDAP_BASEDIR}

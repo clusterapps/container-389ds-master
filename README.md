@@ -1,9 +1,9 @@
 LDAP Server
 ===========
 
-This repository contains an image.
+LDAP master server for ClusterApps services.
 
-This image runs a single [LDAP server](http://directory.fedoraproject.org/).
+This image runs a master [LDAP server](http://directory.fedoraproject.org/) based on 389ds.
 
 ## Requirements
 
@@ -32,12 +32,16 @@ A Schema definition can be inserted into the ldap server using *LDAP_EXTRA_SCHEM
 
 ## Plugins
 
-389ds has a plugin system that allows to enable additionnal features. Some variable are used to enable these features at start time:
+389ds has a plugin system that allows to enable additionnal features. Go to [Red Hat Directory Server plugins](https://access.redhat.com/documentation/en-us/red_hat_directory_server/10/html/plug-in_guide/index) for complete plugin information. 
 
+The following plugins are enabled by default.
 - *LDAP_PLUGIN_ENABLE_ACCOUNT_POLICY*: set to "True" to enable Account Policy plugin
+- *LDAP_PLUGIN_ENABLE_MEMBEROF*: set to "True" to enable MemberOf plugin
+
+Variable to enable these features at start time:
+
 - *LDAP_PLUGIN_ENABLE_ATTRIBUTE_UNIQUENESS*: set to "True" to enable Attribute Uniqueness plugin
 - *LDAP_PLUGIN_ENABLE_DISTRIBUTED_NUMBERIC_ASSIGNMENT*: set to "True" to enable Distributed Numeric Assignment plugin
-- *LDAP_PLUGIN_ENABLE_MEMBEROF*: set to "True" to enable MemberOf plugin
 - *LDAP_PLUGIN_ENABLE_PAM_PASS_THROUGH_AUTH*: set to "True" to enable PAM Pass-Through Auth plugin
 - *LDAP_PLUGIN_ENABLE_PASS_THROUGH_AUTH*: set to "True" to enable Pass-Through Auth plugin
 - *LDAP_PLUGIN_ENABLE_POSIX_WINSYNC_API*: set to "True" to enable Posix Winsync API plugin
